@@ -7,12 +7,13 @@ Conversion library for transforming [Mongoose](http://mongoosejs.com/) schema ob
 ## Installation
 
 ```sh
-$ npm install --save mongoose-to-swagger
+$ npm install --save mongoose-to-swagger-2
 ```
 
 ## Overview
 
 Converts a mongoose model into a swagger schema.
+在mongoose-to-swagger库的基础上修正数组的enum转换，enum移到items的定义。
 
 ## Usage
 
