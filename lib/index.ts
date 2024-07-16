@@ -132,6 +132,10 @@ const mapSchemaTypeToFieldSchema = ({
     meta.format = 'date-time';
   } else if (swaggerType === 'array') {
     const arraySchema = Array.isArray(value) ? value[0] : value.type[0];
+    if(meta.enum){
+      arraySchema.enum = meta.enum;
+      delete meta.enum;
+    }
     const items = mapSchemaTypeToFieldSchema({ value: arraySchema || {}, props, omitFields });
     meta.items = items;
   } else if (swaggerType === 'object') {
