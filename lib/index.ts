@@ -20,7 +20,7 @@ const mapMongooseTypeToSwaggerType = (type): 'string' | 'number' | 'boolean' | '
     return 'object';
   }
 
-  if (type === 'ObjectId' || type === 'ObjectID' || 'schemaobjectid') {
+  if (type === 'ObjectId' || type === 'ObjectID' || type ===  'schemaobjectid') {
     return 'string';
   }
 
