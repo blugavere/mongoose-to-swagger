@@ -20,7 +20,7 @@ const mapMongooseTypeToSwaggerType = (type): 'string' | 'number' | 'boolean' | '
     return 'object';
   }
 
-  if (type === 'ObjectId' || type === 'ObjectID') {
+  if (type === 'ObjectId' || type === 'ObjectID' || type ===  'schemaobjectid') {
     return 'string';
   }
 
@@ -38,7 +38,7 @@ const mapMongooseTypeToSwaggerType = (type): 'string' | 'number' | 'boolean' | '
 
   if (type instanceof Function) {
     // special types
-    if (type.name === 'ObjectId' || type.name === 'ObjectID') {
+    if (type.name === 'ObjectId' || type.name === 'ObjectID' || type.name === 'SchemaObjectId') {
       return 'string';
     }
 
@@ -50,6 +50,9 @@ const mapMongooseTypeToSwaggerType = (type): 'string' | 'number' | 'boolean' | '
       return 'number';
     }
 
+    if (type.name === 'Buffer') {
+      return 'string';
+    }
     return type.name.toLowerCase();
   }
 
@@ -72,6 +75,7 @@ const mapMongooseTypeToSwaggerType = (type): 'string' | 'number' | 'boolean' | '
       case 'SchemaString':
       case 'SchemaBuffer':
       case 'SchemaObjectId':
+      case 'schemaobjectid':
         return 'string';
 
       case 'SchemaArray':

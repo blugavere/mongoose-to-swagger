@@ -25,16 +25,12 @@
     "@typescript-eslint/parser": "2.6.0",
     "chai": "4.2.0",
     "eslint": "6.6.0",
-    "eslint-config-xo-space": "0.21.0",
-    "eslint-import-resolver-typescript": "2.0.0",
-    "eslint-plugin-chai-friendly": "0.5.0",
-    "eslint-plugin-typescript": "0.14.0",
     "mocha": "9.2.2",
     "mongoose": "6.0.10",
     "nyc": "14.1.1",
     "source-map-support": "0.5.16",
     "ts-node": "8.4.1",
-    "typescript": "4.2.3"
+    "typescript": "^4.2.3"
   },
   "repository": "blugavere/mongoose-to-swagger",
   "scripts": {
@@ -46,7 +42,6 @@
     "build": "tsc",
     "prepublish": "npm run build"
   },
-  "dependencies": {},
   "license": "MIT",
   "files": [
     "dist"
